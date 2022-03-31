@@ -1,0 +1,8 @@
+void main() {
+    int a = 0;
+    println(10);
+}
+
+int test(int b) {
+    print(b);
+}

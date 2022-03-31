@@ -1,0 +1,22 @@
+#!/bin/bash
+
+PATH_TO_ASIPRO="/home/louka/C/Compilation" # chemin vers ASIPRO, à modifier pour que le script fonctionne
+PATH_TO_SIPRO="/home/louka/C/Compilation"  # idem, chemin vers SIPRO
+
+echo "> Write your program, it will be written in generated/code.asm, then Ctrl+D to finish"
+echo ""
+./mylanguage
+if [[ $? == 0 ]]  # teste la valeur de retour de la compilation (!= 0 -> erreur)
+then
+  echo ""
+  echo "> Compiling code.asm into a.out with asipro..."
+  $PATH_TO_ASIPRO/asipro generated/code.asm a.out > out.tmp 2>&1   # pour éviter d'afficher tout ce que ASIPRO affiche
+  echo "> Execute a.out with sipro :"
+  echo ""
+  $PATH_TO_SIPRO/sipro a.out  # exécute le programme
+  rm out.tmp
+else
+  echo "Error during compilation : return value $?"
+  exit -1
+fi
+exit 0

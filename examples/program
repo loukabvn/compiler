@@ -1,0 +1,76 @@
+println("DEBUT\n");
+
+println("La ", "fonction ", "print ", "accepte ", "un ",
+      "nombre ", "variable ", "de ", "paramètres.\n");
+
+// Ceci est un commentaire
+
+int a = 10;
+int b = 5;
+println("a <- 10\nb <- 5");
+
+println("\nTest operations arithmétiques :\n");
+println("a + b : ", a + b);
+println("a - b : ", a - b);
+println("a * b : ", a * b);   // Un autre commentaire
+println("a / b : ", a / b);
+println("a % b : ", a % b);
+
+bool t = true;  println("t <- true");
+bool f = false; println("f <- false");
+
+print("\nTest opérations booléenes :\n\n");
+println("a < b : ", a < b);
+println("a > b : ", a > b);
+println("a <= b : ", a <= b);
+println("a >= b : ", a >= b);
+println("a <= 10 : ", a <= 10);
+println("a >= 10 : ", a >= 10);
+
+println("t && f : ", t && f);
+println("t || f : ", t || f);
+println("t == f : ", t == f);
+println("t != f : ", t != f);
+println("!t : ", !t);
+println("!f : ", !f);
+
+println("\nTests conditionnelles :\n");
+if (t || f) {
+    println("true");
+} else {
+    println("false");
+}
+
+while (a >= -5) {
+    println(a);
+    a--;
+}
+
+bool condition = 100 / 4 == 25;
+if (condition) {
+	int d = 0;
+	while (d < 10) {
+		if (d % 2 == 0) {
+			println(d);
+		}
+		d++;
+	}
+}
+
+int max = 100;
+int sum = 0;
+while (max > 0) {
+	sum += max;
+	--max;
+}
+println("La somme des chiffres de 0 à 100 : ", sum);
+
+int n = 10;
+println("n <- 10");
+n += 5;
+n -= 6;
+n *= 4;
+n /= 2;
+println("n += 5\nn -= 6\nn *= 4\nn /= 2\nn : ", n);
+
+println("FIN");
